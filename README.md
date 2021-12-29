@@ -31,6 +31,7 @@ Containers created and their ports (if used) are as follows:
 ## To run next_src
 
 First make sure you have node and yarn installed on your system, and go to next_src folder and open terminal in it then run:
+- `yarn install`
 - `yarn dev`
 
 It should open on port 3000
