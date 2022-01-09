@@ -44,14 +44,10 @@ class UserServiceProvider extends ServiceProvider
             ->middleware('api')
             ->namespace($this->namespace)
             ->group(__DIR__ . '/routes/api.php');
-        if ($this->app->runningInConsole()) {
-            if (isset($_SERVER['argv']))
-                if (array_search('db:seed', $_SERVER['argv']))
-                    Artisan::call('db:seed', ['--class' => "User\database\seeders\AuthTableSeeder"]);
 
-        }
 
         if ($this->app->runningInConsole()) {
+            fwrite(STDOUT, "seeding user \n");
             $this->seed();
         }
 

@@ -19,6 +19,7 @@ class AuthTableSeeder extends Seeder
     public function run()
     {
 
+        fwrite(STDOUT, "seeding starting \n");
         foreach (USER_ROLES as $role) {
             Role::query()->firstOrCreate(['name' => $role]);
         }

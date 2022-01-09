@@ -26,6 +26,7 @@ class UserConfigure
         unset($files[array_search('.', $files)]);
         unset($files[array_search('..', $files)]);
         foreach ($files as $file) {
+            fwrite(STDOUT, "seeding $file \n");
             Artisan::call('db:seed', ['--class' => self::$namespace . "\database\seeders\\" . str_replace('.php', '', $file)]);
         }
     }
